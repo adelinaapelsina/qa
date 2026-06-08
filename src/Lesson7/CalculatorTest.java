@@ -1,6 +1,6 @@
 package Lesson7;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 class CalculatorTest {
 
@@ -8,28 +8,34 @@ class CalculatorTest {
             new Calculator();
 
     @Test
-    void addTest() {
-        assertEquals(8, calculator.add(5,3));
+    public void addTest() {
+
+        Assert.assertEquals(calculator.add(5,3), 8);
     }
 
     @Test
-    void substractTest() {
-        assertEquals(2, calculator.subtract(5,3));
+    public void substractTest() {
+
+        Assert.assertEquals(calculator.subtract(5,3), 2);
     }
 
     @Test
-    void multiplyTest() {
-        assertEquals(15, calculator.multiply(5,3));
+    public void multiplyTest() {
+
+        Assert.assertEquals(calculator.multiply(5,3), 15);
     }
 
     @Test
-    void divideTest() {
-        assertEquals(3, calculator.divide(6,2));
+    public void divideTest() {
+
+        Assert.assertEquals(calculator.divide(6,2), 3);
     }
 
-    @Test
-    void divideByZero() {
+    @Test (
+            expectedExceptions = ArithmeticException.class)
 
-        assertThrows(ArithmeticException.class, () -> calculator.divide(2, 0));
+    public void divideByZero() {
+
+        calculator.divide(5, 0);
     }
 }

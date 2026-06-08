@@ -1,11 +1,8 @@
 package Lesson7;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-class FactorialTest {
+public class FactorialTest {
 
     private final Factorial calculator =
             new Factorial();
@@ -15,7 +12,7 @@ class FactorialTest {
 
         long result = calculator.factorial(5);
 
-        assertEquals(120, result);
+        Assert.assertEquals(result, 120);
     }
 
     @Test
@@ -23,14 +20,12 @@ class FactorialTest {
 
         long result = calculator.factorial(0);
 
-        assertEquals(1, result);
+        Assert.assertEquals(result, 120);
     }
 
-    @Test
+    @Test (expectedExceptions = IllegalArgumentException.class)
     public void factorialNegativeNumber() {
 
-        assertThrows (
-                IllegalArgumentException.class,
-                () -> calculator.factorial(-5));
+        calculator.factorial(-5);
     }
 }

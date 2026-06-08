@@ -1,26 +1,24 @@
 package Lesson7;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-class TriangleTest {
+public class TriangleTest {
 
     private final Triangle calculator =
             new Triangle();
 
     @Test
-    void calculateArea() {
+    public void calculateArea() {
 
         double result =
                 calculator.calculateArea(10, 4);
 
-        assertEquals(20, result);
+        Assert.assertEquals(result, 20);
     }
 
-    @Test
-    void negativeValues() {
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void negativeValues() {
 
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> calculator.calculateArea(-10,5));
+        calculator.calculateArea(-10,5);
     }
 }

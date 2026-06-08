@@ -1,32 +1,32 @@
 package Lesson7;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-class ComparingTest {
+public class ComparingTest {
 
     private final Comparing comparator = new Comparing();
 
     @Test
-    void firstNumberIsGreater() {
+    public void firstNumberIsGreater() {
 
         String result = comparator.compare(10, 5);
 
-        assertEquals("Первое число больше", result);
+        Assert.assertEquals(result, "Первое число больше");
     }
 
     @Test
-    void secondNumberIsGreater() {
+    public void secondNumberIsGreater() {
 
         String result = comparator.compare(5,10);
 
-        assertEquals("Второе число больше", result);
+        Assert.assertEquals(result, "Второе число больше");
     }
 
     @Test
-    void numberAreEqual() {
+    public void numberAreEqual() {
 
         String result = comparator.compare(10,10);
 
-        assertEquals("Числа равны", result);
+        Assert.assertEquals(result,"Числа равны");
     }
 }
