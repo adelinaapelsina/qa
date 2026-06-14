@@ -18,6 +18,7 @@ public class PostmanEcho {
                 .statusCode(200)
                 .body("args.name", org.hamcrest.Matchers.equalTo("Adelina"));
     }
+
     @Test
     void postRequestTest() {
 
@@ -30,8 +31,10 @@ public class PostmanEcho {
                 .post(BASE_URL + "/post")
                 .then()
                 .statusCode(200)
-                .body("json.name", equalTo("Adelina"));;
+                .body("json.name", equalTo("Adelina"));
+        ;
     }
+
     @Test
     void putRequestTest() {
         given()
@@ -43,6 +46,7 @@ public class PostmanEcho {
                 .statusCode(200)
                 .body("json.name", equalTo("Adelina"));
     }
+
     @Test
     void patchRequestTest() {
         given()
@@ -54,6 +58,7 @@ public class PostmanEcho {
                 .statusCode(200)
                 .body("json.name", equalTo("Adelina"));
     }
+
     @Test
     void deleteRequestTest() {
         given()
@@ -62,5 +67,17 @@ public class PostmanEcho {
                 .then()
                 .statusCode(200);
     }
-}
 
+    @Test
+    void postFormRequestTest() {
+
+        given()
+                .contentType("application/json")
+                .body("{\"name\":\"Adelina\"}")
+                .when()
+                .post(BASE_URL + "/post")
+                .then()
+                .statusCode(200)
+                .body("json.name", equalTo("Adelina"));
+    }
+}
