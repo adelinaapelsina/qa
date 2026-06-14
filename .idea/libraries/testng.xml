@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="testng" type="repository">
+    <properties maven-id="org.testng:testng:7.11.0" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/testng-7.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-2.0.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jcommander-1.83.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jquery-3.7.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
